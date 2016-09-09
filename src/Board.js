@@ -88,15 +88,13 @@ class Board extends React.Component {
 
                 <button className={styles.playAgainButton}
                         onClick={this.reset.bind(this)}>{
-                  Translations.text(Translations.BOARD_PLAY_NEXT_MAP, language) }
-                </button>
+                  Translations.text(Translations.BOARD_PLAY_NEXT_MAP, language)
+                }</button>
               </div>
             </div> :
             null
         }
-        {
-          board.rows.map((row, y) => this.renderRow(row, y))
-        }
+        { board.rows.map((row, y) => this.renderRow(row, y)) }
       </div>
     );
   }

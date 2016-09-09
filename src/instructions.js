@@ -13,32 +13,40 @@ export const AVAILABLE_INSTRUCTIONS = [
   INSTRUCTION_BACKWARD
 ];
 
-function createInstructionElement(instruction, isActive) {
+function createInstructionElement(instruction, isActive, isClickable) {
   switch (instruction) {
     case INSTRUCTION_LEFT:
       return (
-        <button className={isActive ? styles.leftActive : styles.left}>
-          &larr;
+        <button className={isActive ? styles.leftActive :
+                                      isClickable ? styles.left :
+                                                    styles.leftUnclickable }>
+          &#x21B0;
         </button>
       );
 
     case INSTRUCTION_RIGHT:
       return (
-        <button className={isActive ? styles.rightActive : styles.right}>
-          &rarr;
+        <button className={isActive ? styles.rightActive :
+                                      isClickable ? styles.right :
+                                                    styles.leftUnclickable }>
+          &#x21B1;
         </button>
       );
 
     case INSTRUCTION_FORWARD:
       return (
-        <button className={isActive ? styles.forwardActive : styles.forward}>
+        <button className={isActive ? styles.forwardActive :
+                                      isClickable ? styles.forward :
+                                                    styles.forwardUnclickable }>
           &uarr;
         </button>
       );
 
     case INSTRUCTION_BACKWARD:
       return (
-        <button className={isActive ? styles.backwardActive : styles.backward}>
+        <button className={isActive ? styles.backwardActive :
+                                      isClickable ? styles.backward :
+                                                    styles.backwardUnclickable }>
           &darr;
         </button>
       );
@@ -55,8 +63,10 @@ function createInstructionElement(instruction, isActive) {
 
 export class Instruction extends React.Component {
   render() {
-    const { instruction, onClick, isActive } = this.props;
-    return React.cloneElement(createInstructionElement(instruction, isActive),
+    const { instruction, onClick, isActive, isUnclickable } = this.props;
+    return React.cloneElement(createInstructionElement(instruction,
+                                                       isActive,
+                                                       !isUnclickable),
                               {onClick: onClick});
   }
 }

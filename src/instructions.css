@@ -1,19 +1,32 @@
 .instruction {
     display: inline-block;
-    height: 1.5em;
-    width: 1.5em;
+    height: 1.6em;
+    width: 1.6em;
     padding: 0;
 
     margin: 2px;
     cursor: pointer;
 }
 
-.left,
-.right,
-.forward,
-.backward {
+.turnButton {
     composes: button from './button.css';
     margin: 2px;
+    background-color: darkcyan;
+}
+
+.moveButton {
+    composes: button from './button.css';
+    margin: 2px;
+}
+
+.left,
+.right {
+    composes: turnButton;
+}
+
+.forward,
+.backward {
+    composes: moveButton;
 }
 
 .leftActive,
@@ -22,4 +35,28 @@
 .backwardActive {
     composes: button from './button.css';
     background-color: yellow;
+}
+
+.leftUnclickable,
+.rightUnclickable {
+    composes: turnButton;
+    cursor: default;
+}
+
+.leftUnclickable:active,
+.rightUnclickable:active,
+.forwardUnclickable:active,
+.backwardUnclickable:active,
+.leftUnclickable:focus,
+.rightUnclickable:focus,
+.forwardUnclickable:focus,
+.backwardUnclickable:focus {
+    border: none;
+    outline: none;
+}
+
+.forwardUnclickable,
+.backwardUnclickable {
+    composes: moveButton;
+    cursor: default;
 }

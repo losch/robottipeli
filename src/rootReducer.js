@@ -161,6 +161,12 @@ function board(state = initialBoard, action) {
   }
   else {
     switch (action.type) {
+      case Actions.STOP_TRIGGERED:
+        if (state.robot.hasRobotWon) {
+          break;
+        }
+        // fallthrough
+
       case Actions.RESET:
         return assign(
           {},

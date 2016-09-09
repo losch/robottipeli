@@ -60,3 +60,19 @@ h2 {
     margin-top: 0.4em;
     margin-bottom: 0.3em;
 }
+
+.help {}
+
+.helpItem {
+    text-align: left;
+}
+
+.helpItemLeft {
+    float: left;
+    margin-left: 32px;
+}
+
+.helpItemRight {
+    float: right;
+    margin-right: 32px;
+}
