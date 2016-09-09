@@ -1,0 +1,21 @@
+.instructions {
+    min-height: 42px;
+    line-height: 50px;
+}
+
+.instruction {
+    height: 42px;
+    width: 42px;
+    line-height: 40px;
+    display: inline-block;
+    border: 1px dashed;
+
+}
+
+.playButton {
+    composes: primaryButton from './button.css';
+
+    width: 75px;
+    height: 42px;
+    margin-right: 12px;
+}

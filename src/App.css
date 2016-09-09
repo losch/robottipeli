@@ -1,0 +1,62 @@
+@import "./_reset.css";
+
+html {
+    box-sizing: border-box;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+body {
+    background: #e0fff1 radial-gradient(transparent, hsla(0, 100%, 0%, 0.15));
+}
+
+.app {
+    composes: clearfix from './common.css';
+
+    color: #111111;
+
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 960px;
+    text-align: center;
+}
+
+.header {
+    text-transform: uppercase;
+    font-size: 4em;
+    font-weight: 900;
+    color: #111111;
+}
+
+.controlPanel {
+    composes: unselectable from './common.css';
+
+    width: 50%;
+    float: right;
+
+    padding: 15px 0;
+    background-color: white;
+    border-radius: 6px;
+    border: 3px dashed #d9ece2;
+}
+
+.controlPanelSeparator {
+    margin: 20px 0 15px 15px;
+    height: 2px;
+    border-bottom: 4px dotted #c0bdb0;
+}
+
+h1 {
+    font-size: 2.5em;
+    font-weight: 900;
+    margin-top: 0.5em;
+    margin-bottom: 0.4em;
+}
+
+h2 {
+    font-size: 1.2em;
+    font-weight: 900;
+    margin-top: 0.4em;
+    margin-bottom: 0.3em;
+}

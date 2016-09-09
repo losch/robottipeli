@@ -1,0 +1,25 @@
+.instruction {
+    display: inline-block;
+    height: 1.5em;
+    width: 1.5em;
+    padding: 0;
+
+    margin: 2px;
+    cursor: pointer;
+}
+
+.left,
+.right,
+.forward,
+.backward {
+    composes: button from './button.css';
+    margin: 2px;
+}
+
+.leftActive,
+.rightActive,
+.forwardActive,
+.backwardActive {
+    composes: button from './button.css';
+    background-color: yellow;
+}
